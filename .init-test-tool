@@ -1,0 +1,4 @@
+{
+    "command": "flutter test",
+    "working_directory": "/home/kavia/workspace/reservation-app/reservation_management"
+}
