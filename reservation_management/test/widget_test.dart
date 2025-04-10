@@ -1,18 +1,11 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:template/main.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:reservation_management/main.dart';
 
 void main() {
-  testWidgets('App generation message displayed', (WidgetTester tester) async {
-    await tester.pumpWidget(const MyApp());
+  testWidgets('Reservation app renders correctly', (WidgetTester tester) async {
+    await tester.pumpWidget(const ProviderScope(child: MyApp()));
     
-    expect(find.text('AI App is being generated...'), findsOneWidget);
-    expect(find.byType(CircularProgressIndicator), findsOneWidget);
-  });
-  
-  testWidgets('App bar has correct title', (WidgetTester tester) async {
-    await tester.pumpWidget(const MyApp());
-    
-    expect(find.text('AI Build Tool'), findsOneWidget);
+    expect(find.text('Reservations'), findsOneWidget);
   });
 }
